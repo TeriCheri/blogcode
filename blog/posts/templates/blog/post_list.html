@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog</title>
+</head>
+<body>
+	<h1>Blog formatted code</h1>
+	{% for post in posting %}
+		<div>
+			<h2><a href="{% url 'post_detail' pk=post.pk %}>{{ post.title }}</a></h2>
+			<p>{{ post.content }}</p>
+			<p>Published by {{ post.author }} on {{ post.published_date }}</p>
+		</div>
+	{% endfor %}
+</body>
+</html>
